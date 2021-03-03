@@ -84,11 +84,36 @@ WHERE movies.genres LIKE "comedy" AND movies.title LIKE "%(2005)%"
 -- Question 15 --
 SELECT movies.title
 FROM movies 
-LEFT OUTER JOIN ratings ON (movieS.id = ratings.movie_id)
+LEFT OUTER JOIN ratings ON (movies.id = ratings.movie_id)
 WHERE ratings.movie_id IS NULL
 
 
 -- Question 16 --
+SELECT AVG(rating), movie_id
+FROM ratings
+GROUP BY movie_id
+
+
 -- Question 17 --
+SELECT TOTAL(rating), movie_id
+FROM ratings
+GROUP BY movie_id
+
+
+-- Question 18 --
+SELECT TOTAL(title), genres
+FROM movies
+GROUP BY genres
+
+
+-- Question 19 --
+SELECT AVG(rating), user_id
+FROM ratings
+GROUP BY user_id
+
+-- Question 20 --
+-- Question 21 --
+-- Question 22 --
+-- Question 23 --
 
 -- IGNORE CREATE A NEW TABLE ONLY SELECTING
